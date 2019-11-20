@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="suggestions">
+        <item>NullPointer</item>
+        <item>IllegalState</item>
+        <item>NotFound</item>
+        <item>Forbidden</item>
+        <item>None</item>
+    </string-array>
+</resources>
