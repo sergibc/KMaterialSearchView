@@ -11,6 +11,7 @@
         <attr name="android:textColor" />
         <attr name="android:textColorHint" />
         <attr name="android:inputType" />
-        <attr name="searchFieldPrefix" format="integer"/>
+        <attr name="searchPrefix" format="integer"/>
+        <attr name="searchMaxLength" format="integer"/>
     </declare-styleable>
 </resources>

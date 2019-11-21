@@ -9,10 +9,7 @@ import android.graphics.drawable.Drawable
 import android.os.Parcel
 import android.os.Parcelable
 import android.speech.RecognizerIntent
-import android.text.Editable
-import android.text.Selection
-import android.text.TextUtils
-import android.text.TextWatcher
+import android.text.*
 import android.util.AttributeSet
 import android.view.MenuItem
 import android.view.View
@@ -20,6 +17,7 @@ import android.view.View.OnFocusChangeListener
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+
 
 class KMaterialSearchView @JvmOverloads constructor(
     private val mContext: Context,
@@ -49,6 +47,7 @@ class KMaterialSearchView @JvmOverloads constructor(
     private var allowVoiceSearch: Boolean = false
     private var ellipsize = false
     private var submit = false
+    private var maxLength: Integer? = null
 
     private var oldQueryText: CharSequence? = null
     private var userQuery: CharSequence? = null
@@ -210,8 +209,12 @@ class KMaterialSearchView @JvmOverloads constructor(
                 )
             }
 
-            if (hasValue(R.styleable.KMaterialSearchView_searchFieldPrefix)) {
-                setPrefix(a.getString(R.styleable.KMaterialSearchView_searchFieldPrefix))
+            if (hasValue(R.styleable.KMaterialSearchView_searchPrefix)) {
+                setPrefix(a.getString(R.styleable.KMaterialSearchView_searchPrefix))
+            }
+
+            if (hasValue(R.styleable.KMaterialSearchView_searchMaxLength)) {
+                setMaxLength(a.getInt(R.styleable.KMaterialSearchView_searchMaxLength, -1))
             }
 
         }
@@ -491,6 +494,18 @@ class KMaterialSearchView @JvmOverloads constructor(
 
     fun setPrefix(prefix: String?) {
         this.prefix = "$prefix "
+    }
+
+    fun setMaxLength(maxLength: Int) {
+        if (maxLength > 0) {
+            val filterArray = arrayOfNulls<InputFilter>(1)
+            var max = maxLength
+            prefix?.let{
+                max += it.length
+            }
+            filterArray[0] = InputFilter.LengthFilter(max)
+            searchTextView?.filters = filterArray
+        }
     }
 
     public override fun onRestoreInstanceState(state: Parcelable) {

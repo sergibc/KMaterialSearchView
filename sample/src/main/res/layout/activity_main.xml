@@ -71,7 +71,8 @@
                 app:searchBackIcon="@drawable/ic_arrow_back"
                 app:searchBackground="@color/colorPrimaryDark"
                 app:searchCloseIcon="@drawable/ic_close"
-                app:searchFieldPrefix="@string/prefix" />
+                app:searchMaxLength="5"
+                app:searchPrefix="@string/prefix" />
 
         </FrameLayout>
 
