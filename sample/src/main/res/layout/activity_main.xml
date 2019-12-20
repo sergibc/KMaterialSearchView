@@ -68,6 +68,8 @@
                 android:inputType="text"
                 android:textColor="#FFFFFF"
                 android:textColorHint="#999999"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_title"
                 app:searchBackIcon="@drawable/ic_arrow_back"
                 app:searchBackground="@color/colorPrimaryDark"
                 app:searchCloseIcon="@drawable/ic_close"

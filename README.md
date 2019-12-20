@@ -29,6 +29,9 @@ If you don't need any of these features, probably you are not in the right place
         - searchMaxLength: max input text length
 
 ## Usage
+## Dependency
+TODO
+
 ### XML
 ```xml
 <com.sergibc.kmaterialsearchview.KMaterialSearchView

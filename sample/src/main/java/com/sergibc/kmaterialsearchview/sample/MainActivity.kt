@@ -1,10 +1,11 @@
-package com.sergibc.kmaterialsearchview
+package com.sergibc.kmaterialsearchview.sample
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.sergibc.kmaterialsearchview.KMaterialSearchView
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,12 +15,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        searchBar = findViewById(R.id.search_view)
-
-        searchBar.setSuggestions(resources.getStringArray(R.array.suggestions))
 
         val ivSearch = findViewById<ImageView>(R.id.iv_search)
-        ivSearch.setOnClickListener { searchBar.showSearch(true) }
+        ivSearch.setOnClickListener {
+            searchBar = findViewById(R.id.search_view)
+            searchBar.setSuggestions(resources.getStringArray(R.array.suggestions))
+            searchBar.showSearch(true)
+        }
 
     }
 
