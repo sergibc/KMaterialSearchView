@@ -53,6 +53,3 @@ Add this line to your dependencies in your project build.gradle file:
 ```
 ### Code (Kotlin)
 You can find or create the search view and call the public methods in `com.sergibc.kmaterialsearchview.KMaterialSearchView` class.
-
-## TODOs
-Publish aar to a public repository
