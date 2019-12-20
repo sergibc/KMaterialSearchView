@@ -29,8 +29,11 @@ If you don't need any of these features, probably you are not in the right place
         - searchMaxLength: max input text length
 
 ## Usage
-## Dependency
-TODO
+### Dependency
+Add this line to your dependencies in your project build.gradle file:
+```gradle
+'com.sergibc.kmaterialsearchview:kmaterialsearchview:0.0.1'
+```
 
 ### XML
 ```xml
